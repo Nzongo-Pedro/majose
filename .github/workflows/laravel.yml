@@ -1,0 +1,24 @@
+name: 🚀 Enviando em produção
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3  # Atualizado para v3
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      with:
+        server: 92.112.189.176
+        username: ${{ secrets.user_app }}
+        password: ${{ secrets.pass_app }}
+        local-dir: ./  # Verifique se está no diretório correto
+        server-dir: /public_html/  # Verifique se o diretório remoto está correto
