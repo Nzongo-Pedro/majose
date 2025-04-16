@@ -17,7 +17,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
-        server: 92.112.189.176
+        server: 77.37.127.1
         username: ${{ secrets.user_app }}
         password: ${{ secrets.pass_app }}
         local-dir: ./  # Verifique se está no diretório correto
