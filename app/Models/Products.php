@@ -12,6 +12,7 @@ class Products extends Model
     protected $fillable = [
         'id_category',
         'id_subcategory',
+        'id_brand',
         'id_size',
         'id_color',
         'id_gender',
@@ -50,5 +51,10 @@ class Products extends Model
     public function old()
     {
         return $this->belongsTo(Olds::class, 'id_old');
+    }
+
+    public function brand()
+    {
+        return $this->belongsTo(Brands::class, 'id_brand');
     }
 }
