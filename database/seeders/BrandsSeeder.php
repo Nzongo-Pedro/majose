@@ -19,7 +19,7 @@ class BrandsSeeder extends Seeder
         ];
 
         foreach ($brands as $brand) {
-            Brands::creat($brand);
+            Brands::create($brand);
         }
     }
 }

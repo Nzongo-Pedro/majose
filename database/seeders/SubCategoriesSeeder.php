@@ -14,11 +14,11 @@ class SubCategoriesSeeder extends Seeder
     public function run(): void
     {
         $subcategories = [
-            ['id_subcategory' => 1, 'name' => 'Pumax']
+            ['id_category' => 1, 'name' => 'Pumax']
         ];
 
         foreach ($subcategories as $subcategory) {
-            SubCategories::creeat($subcategory);
+            SubCategories::create($subcategory);
         }
     }
 }

@@ -16,7 +16,7 @@ class OldsSeeder extends Seeder
         $olds = ['Crianças', 'Adolescentes', 'Jovens', 'Adultos'];
 
         foreach ($olds as $old) {
-            Olds::creat(['name' => $old]);
+            Olds::create(['old' => $old]);
         }
     }
 }

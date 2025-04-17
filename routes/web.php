@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::prefix('store/products')
+    //   ->middleware('auth.ispeka')
+    ->controller(ProductsController::class)
+    ->group(function () {
+        Route::get('/all-products', 'index')->name('products.index');
+        Route::get('/single-product/{id}', 'show')->name('product.unico');
+        Route::post('/product-delete', 'delete')->name('product.delete');
+    });

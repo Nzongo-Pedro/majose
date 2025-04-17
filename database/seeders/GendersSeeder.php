@@ -15,11 +15,11 @@ class GendersSeeder extends Seeder
     {
         $genders = [
             [
-                'name' => 'Feminino',
+                'gender' => 'Feminino',
                 'code' => 'F'
             ],
             [
-                'name' => 'Masculino',
+                'gender' => 'Masculino',
                 'code' => 'M'
             ],
         ];
