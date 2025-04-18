@@ -20,7 +20,7 @@ class Products extends Model
         'name',
         'price',
         'discount',
-        'desription'
+        'description'
     ];
 
     protected $hidden = [
@@ -41,11 +41,6 @@ class Products extends Model
     public function size()
     {
         return $this->belongsTo(Sizes::class, 'id_size')->select('id', 'name', 'code');
-    }
-
-    public function color()
-    {
-        return $this->belongsTo(Colors::class, 'id_color')->select('id', 'code', 'name');
     }
 
     public function gender()

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Exception;
+use PDOException;
 
 class CrudAjaxHelper
 {
@@ -23,7 +24,7 @@ class CrudAjaxHelper
                 'data' => $record,
                 'code' => 201,
             ], 201);
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             DB::rollBack();
             return response()->json([
                 'errors' => 'Erro ao criar o registro.',
@@ -44,7 +45,7 @@ class CrudAjaxHelper
                 'data' => $record,
                 'code' => 200,
             ], 200);
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             DB::rollBack();
             return response()->json([
                 'message' => 'Erro ao atualizar o registro.',

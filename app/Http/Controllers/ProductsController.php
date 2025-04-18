@@ -4,8 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Helpers\CrudAjaxHelper;
 use App\Http\Requests\StoreProductsRequests;
+use App\Models\Brands;
+use App\Models\Categories;
+use App\Models\Colors;
+use App\Models\Genders;
+use App\Models\Olds;
 use App\Models\Products;
+use App\Models\Sizes;
+use App\Models\SubCategories;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class ProductsController extends Controller
 {
@@ -47,7 +55,7 @@ class ProductsController extends Controller
 
     public function store(StoreProductsRequests $request, Products $products)
     {
-        $datas = $request->validated();
+        $datas = $request->all();
 
         $save_products = CrudAjaxHelper::store($datas, $products);
 
@@ -57,5 +65,29 @@ class ProductsController extends Controller
 
             return response()->json($responseData, 201);
         }
+    }
+
+    public function create()
+    {
+        $olds = Olds::all();
+        $sizes = Sizes::all();
+        $brands = Brands::all();
+        $colors = Colors::all();
+        $genders = Genders::all();
+        $categories = Categories::all();
+        $subcategories = SubCategories::all();
+
+        return view(
+            'admin.produtcs.register',
+            compact(
+                'olds',
+                'sizes',
+                'brands',
+                'colors',
+                'genders',
+                'categories',
+                'subcategories'
+            )
+        );
     }
 }

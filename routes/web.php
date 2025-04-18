@@ -26,5 +26,7 @@ Route::prefix('store/products')
         Route::get('/single-product/{id}/{model}', 'show')->name('product.unico');
         Route::get('/product-category/{id}/{category}', 'showByCategory')->name('product.get.category');
         Route::get('/product-subcategory/{id}/{subcategory}', 'showBySubcategory')->name('product.get.subcategory');
+        Route::get('/product-create', 'create')->name('product.create');
         Route::post('/product-delete', 'delete')->name('product.delete');
+        Route::post('/product-store', 'store')->name('product.store');
     });
