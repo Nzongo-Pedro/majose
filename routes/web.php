@@ -15,15 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-
 
 Route::prefix('store/products')
     //   ->middleware('auth.ispeka')
     ->controller(ProductsController::class)
     ->group(function () {
         Route::get('/all-products', 'index')->name('products.index');
-        Route::get('/single-product/{id}', 'show')->name('product.unico');
+        Route::get('/single-product/{id}/{model}', 'show')->name('product.unico');
+        Route::get('/product-category/{id}/{category}', 'showByCategory')->name('product.get.category');
+        Route::get('/product-subcategory/{id}/{subcategory}', 'showBySubcategory')->name('product.get.subcategory');
         Route::post('/product-delete', 'delete')->name('product.delete');
     });
