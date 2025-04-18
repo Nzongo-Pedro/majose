@@ -22,6 +22,7 @@ class CrudAjaxHelper
             return response()->json([
                 'message' => 'Registro criado com sucesso',
                 'data' => $record,
+                'id_product' => $record->id,
                 'code' => 201,
             ], 201);
         } catch (PDOException $e) {

@@ -17,7 +17,7 @@ const createData = (url, data) => {
     })
         .then(res => res.json())
         .then(response => {
-            if (response.code === 201) {
+            if (response.code === 201 || response.code === 200) {
 
                 alertMessage('Sucesso', response.message || 'Data created successfully', 'success');
 
@@ -45,7 +45,7 @@ formPost.forEach((form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        Swal.fire({
+        /* Swal.fire({
             icon: 'warning',
             showConfirmButton: false,
             title: 'Aguarde',
@@ -61,7 +61,7 @@ formPost.forEach((form) => {
             } else {
                 Swal.showLoading(); // Exibe o preloader se o alerta não estiver fechado
             }
-        });
+        }); */
 
         const data = new FormData(form)
 

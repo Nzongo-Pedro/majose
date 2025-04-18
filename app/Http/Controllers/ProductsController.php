@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\CrudAjaxHelper;
+use App\Helpers\UploadImageHelper;
 use App\Http\Requests\StoreProductsRequests;
 use App\Models\Brands;
 use App\Models\Categories;
@@ -10,6 +11,7 @@ use App\Models\Colors;
 use App\Models\Genders;
 use App\Models\Olds;
 use App\Models\Products;
+use App\Models\ProductsPhoto;
 use App\Models\Sizes;
 use App\Models\SubCategories;
 use Illuminate\Http\Request;
@@ -55,13 +57,25 @@ class ProductsController extends Controller
 
     public function store(StoreProductsRequests $request, Products $products)
     {
-        $datas = $request->all();
+        $datas = $request->validated();
 
         $save_products = CrudAjaxHelper::store($datas, $products);
 
         if ($save_products->getStatusCode() === 201) {
             $responseData = $save_products->getData(true);
             //$responseData['redirect'] = route('curso.listar');
+
+            // Upload Imagem produtc
+
+
+            $id_product = $responseData['id_product'];
+
+            $file_name = UploadImageHelper::validateAndUploadImage($datas['file_name']);
+
+            $save_photo = ProductsPhoto::create([
+                'id_product' => $id_product,
+                'file_name' => $file_name
+            ]);
 
             return response()->json($responseData, 201);
         }

@@ -33,7 +33,8 @@ class StoreProductsRequests extends FormRequest
             'name' => 'required|string|max:50|min:5',
             'price' => 'required',
             'discount' => 'required|string',
-            'description' => 'required|min:20|max:1000|string'
+            'description' => 'required|min:20|max:1000|string',
+            'file_name' => 'required|image|mimes:jpeg,png,jpg,gif,webpp|max:2048',
         ];
     }
 
@@ -50,7 +51,7 @@ class StoreProductsRequests extends FormRequest
             'name' => 'Nome do produto',
             'price' => 'Preço do produto',
             'discount' => 'Desconto do produto',
-            'description' => 'Descrição do produto'
+            'description' => 'Descrição do produto',
         ];
     }
 
@@ -78,6 +79,10 @@ class StoreProductsRequests extends FormRequest
             'description.required' => 'A descrição é obrigatória',
             'description.min' => 'A descrição deve ter no mínimo 20 caracteres',
             'description.max' => 'A descrição deve ter no máxino 300 caracter',
+            "file_name.image" => "O arquivo deve ser uma imagem",
+            "file_name.mimes" => "A imagem deve ser do tipo: jpeg, png, jpg ou gif",
+            "file_name.max" => "A imagem não pode exceder 2MB",
+            'file_name.required' => 'A foto do produto é obriga'
         ];
     }
 

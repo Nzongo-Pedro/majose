@@ -45,9 +45,9 @@
                         <fieldset class="name">
                             <div class="body-title mb-10">Nome do produto <span class="tf-color-1">*</span></div>
                             <input class="mb-10" type="text" placeholder="Informe o nome do produto" name="name"
-                                tabindex="0" value="{{old('name')}}" aria-required="true" required maxlength="20"
+                                tabindex="0" value="{{old('name')}}" aria-required="true" required maxlength="50"
                                 minlength="5">
-                            <div class="text-tiny">O nome do produto não pode exceder dos 20 caracteres</div>
+                            <div class="text-tiny">O nome do produto não pode exceder dos 50 caracteres</div>
                         </fieldset>
                         <div class="gap22 cols">
                             <fieldset class="category">
@@ -149,7 +149,7 @@
                                         </span>
                                         <span class="text-tiny">Arraste ou cole suas imagens aqui <span
                                                 class="tf-color">Clique para selecionar</span></span>
-                                        <input type="file" id="myFile" name="filename">
+                                        <input type="file" id="myFile" name="file_name">
                                     </label>
                                 </div>
                             </div>
