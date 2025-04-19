@@ -18,4 +18,10 @@ class ProductsPhoto extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Products::class, 'id_product');
+    }
+
 }

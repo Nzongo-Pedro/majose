@@ -37,7 +37,7 @@
                                 </a>
                             </li>
                             <li class="sub-menu-item">
-                                <a href="product-list.html" class="">
+                                <a href="{{route('products.index')}}" class="">
                                     <div class="text">Listar produtos</div>
                                 </a>
                             </li>

@@ -31,7 +31,7 @@
                             <i class="icon-chevron-right"></i>
                         </li>
                         <li>
-                            <div class="text-tiny">Add produtos</div>
+                            <div class="text-tiny">Novo produto</div>
                         </li>
                     </ul>
                 </div>
@@ -149,13 +149,12 @@
                                         </span>
                                         <span class="text-tiny">Arraste ou cole suas imagens aqui <span
                                                 class="tf-color">Clique para selecionar</span></span>
-                                        <input type="file" id="myFile" name="file_name">
+                                        <input type="file" id="myFile" name="file_name" required>
                                     </label>
                                 </div>
                             </div>
-                            <div class="body-text">You need to add at least 4 images. Pay attention to the quality of the
-                                pictures you add, comply with the background color standards. Pictures must be in certain
-                                dimensions. Notice that the product shows all the details</div>
+                            <div class="body-text">Você pode adicionar até 4 fotos mais tarde para este produto. Isto será
+                                aprentado em forma de slides em detalhes do produto.</div>
                         </fieldset>
                         <div class="cols gap22">
                             <fieldset class="size">
@@ -172,20 +171,19 @@
                             <fieldset class="name">
                                 <div class="body-title mb-10">Preço</div>
                                 <div class="select">
-                                    <input type="number" name="price" placeholder="Preço do produto">
+                                    <input type="number" name="price" placeholder="Preço do produto" min="100">
                                 </div>
                             </fieldset>
                             <fieldset class="name">
                                 <div class="body-title mb-10">Desconto</div>
                                 <div class="name">
-                                    <input type="number" name="discount" placeholder="Desconto do produto">
+                                    <input type="number" name="discount" placeholder="Desconto do produto" min="0"
+                                        max="100">
                                 </div>
                             </fieldset>
                         </div>
                         <div class="cols gap10">
-                            <button class="tf-button w-full" type="submit">Add product</button>
-                            <button class="tf-button style-1 w-full" type="submit">Save product</button>
-                            <a href="#" class="tf-button style-2 w-full">Schedule</a>
+                            <button class="tf-button w-full" type="submit">Adicionar</button>
                         </div>
                     </div>
                 </form>
@@ -193,15 +191,6 @@
             </div>
             <!-- /main-content-wrap -->
         </div>
-        <!-- /main-content-wrap -->
-        <!-- bottom-page -->
-        <div class="bottom-page">
-            <div class="body-text">Copyright © 2024 Remos. Design with</div>
-            <i class="icon-heart"></i>
-            <div class="body-text">by <a href="https://themeforest.net/user/themesflat/portfolio">Themesflat</a> All rights
-                reserved.</div>
-        </div>
-        <!-- /bottom-page -->
     </div>
 @endsection
 

@@ -15,15 +15,17 @@ use App\Models\ProductsPhoto;
 use App\Models\Sizes;
 use App\Models\SubCategories;
 use Illuminate\Http\Request;
-use Illuminate\Validation\ValidationException;
 
 class ProductsController extends Controller
 {
     public function index(Products $products)
     {
-        $produtos = $products->with(['brand', 'category', 'subcategory', 'gender', 'old', 'size'])->get();
+        $produtos = $products
+            ->with(['brand', 'category', 'subcategory', 'gender', 'old', 'size', 'photo'])
+            ->paginate(25);
 
-        return response()->json($produtos, $status = 200);
+        return view('admin.produtcs.index', compact('produtos'));
+        //return response()->json($produtos, $status = 200);
     }
 
     public function show(Products $products, $id = null)
@@ -63,10 +65,9 @@ class ProductsController extends Controller
 
         if ($save_products->getStatusCode() === 201) {
             $responseData = $save_products->getData(true);
-            //$responseData['redirect'] = route('curso.listar');
+            $responseData['redirect'] = route('products.index');
 
             // Upload Imagem produtc
-
 
             $id_product = $responseData['id_product'];
 
@@ -103,5 +104,12 @@ class ProductsController extends Controller
                 'subcategories'
             )
         );
+    }
+
+    public function destroy(Request $request, Products $products)
+    {
+        $records = $request->all();
+
+        $delete = CrudAjaxHelper::delete($products);
     }
 }

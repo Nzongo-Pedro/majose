@@ -45,7 +45,7 @@ formPost.forEach((form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        /* Swal.fire({
+        Swal.fire({
             icon: 'warning',
             showConfirmButton: false,
             title: 'Aguarde',
@@ -61,7 +61,7 @@ formPost.forEach((form) => {
             } else {
                 Swal.showLoading(); // Exibe o preloader se o alerta não estiver fechado
             }
-        }); */
+        });
 
         const data = new FormData(form)
 

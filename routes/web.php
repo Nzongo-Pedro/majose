@@ -29,4 +29,5 @@ Route::prefix('store/products')
         Route::get('/product-create', 'create')->name('product.create');
         Route::post('/product-delete', 'delete')->name('product.delete');
         Route::post('/product-store', 'store')->name('product.store');
+        Route::delete('/product-delete', 'destroy')->name('product.destroy');
     });

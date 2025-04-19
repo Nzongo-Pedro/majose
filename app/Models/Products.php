@@ -57,4 +57,14 @@ class Products extends Model
     {
         return $this->belongsTo(Brands::class, 'id_brand')->select('id', 'name');
     }
+
+    public function photo()
+    {
+        return $this->hasOne(ProductsPhoto::class, 'id_product');
+    }
+
+    public function color()
+    {
+        return $this->belongsTo(Colors::class, 'id_color');
+    }
 }
