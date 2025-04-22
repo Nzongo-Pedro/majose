@@ -98,7 +98,7 @@
 
             <p><strong>Informações de acesso:</strong></p>
             <p><strong>E-mail:</strong> {{ $user->email }}</p>
-            <p><strong>Senha gerada:</strong> <span class="password">{{ $password }}</span></p>
+            <p><strong>Senha:</strong> <span class="password">{{ $password }}</span></p>
 
             <p>Por motivos de segurança, recomendamos que você altere sua senha após o primeiro acesso.</p>
 
