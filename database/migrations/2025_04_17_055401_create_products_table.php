@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->foreignId('id_subcategory')->constrained('sub_categories')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('id_brand')->constrained('brands')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('id_size')->constrained('sizes')->onDelete('cascade')->onUpdate('cascade');
-            // $table->foreignId('id_color')->constrained('colors')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('id_color')->constrained('colors')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('id_gender')->constrained('genders')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('id_old')->constrained('olds')->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
