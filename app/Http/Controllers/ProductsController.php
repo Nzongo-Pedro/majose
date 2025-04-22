@@ -24,7 +24,7 @@ class ProductsController extends Controller
             ->with(['brand', 'category', 'subcategory', 'gender', 'old', 'size', 'photo'])
             ->paginate(25);
 
-        return view('admin.produtcs.index', compact('produtos'));
+        return view('Admin.produtcs.index', compact('produtos'));
         //return response()->json($produtos, $status = 200);
     }
 
@@ -93,7 +93,7 @@ class ProductsController extends Controller
         $subcategories = SubCategories::all();
 
         return view(
-            'admin.products.register',
+            'Admin.produtcs.register',
             compact(
                 'olds',
                 'sizes',
