@@ -106,10 +106,18 @@ class ProductsController extends Controller
         );
     }
 
-    public function destroy(Request $request, Products $products)
+    public function destroy(Request $request)
     {
-        $records = $request->all();
+        $product = Products::find($request->id_product);
 
-        $delete = CrudAjaxHelper::delete($products);
+        if (!$product) {
+            return response()->json([
+                'message' => 'Produto não encontrado',
+                'code' => 404,
+            ], 404);
+        }
+
+        return CrudAjaxHelper::delete($product);
     }
+
 }

@@ -21,8 +21,8 @@
             </div>
             <form action=" {{route('product.destroy')}}" method="post" id="postAction">
                 @csrf
-                @method('delete')
-                <input type="hidden" name="id_product" id="idProduto" value="">
+                @method('DELETE')
+                <input type="hidden" name="id_product" id="idProduto" value=""> 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-danger">Continuar</button>
