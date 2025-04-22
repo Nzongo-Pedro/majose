@@ -93,7 +93,7 @@ class ProductsController extends Controller
         $subcategories = SubCategories::all();
 
         return view(
-            'admin.produtcs.register',
+            'admin.products.register',
             compact(
                 'olds',
                 'sizes',
