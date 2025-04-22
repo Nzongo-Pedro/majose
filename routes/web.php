@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\Auth\AuthController;
 
-/*
+
+/*  
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -18,8 +20,9 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 Route::prefix('store/products')
-    //   ->middleware('auth.ispeka')
+    ->middleware('auth')
     ->controller(ProductsController::class)
     ->group(function () {
         Route::get('/all-products', 'index')->name('products.index');
@@ -27,7 +30,10 @@ Route::prefix('store/products')
         Route::get('/product-category/{id}/{category}', 'showByCategory')->name('product.get.category');
         Route::get('/product-subcategory/{id}/{subcategory}', 'showBySubcategory')->name('product.get.subcategory');
         Route::get('/product-create', 'create')->name('product.create');
-        Route::post('/product-delete', 'delete')->name('product.delete');
         Route::post('/product-store', 'store')->name('product.store');
         Route::delete('/product-delete', 'destroy')->name('product.destroy');
     });
+
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
