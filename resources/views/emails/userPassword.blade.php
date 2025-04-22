@@ -71,7 +71,7 @@
         .button {
             display: inline-block;
             background-color: #4CAF50;
-            color: white;
+            color: white !important;
             padding: 12px 20px;
             font-size: 16px;
             text-decoration: none;
@@ -102,7 +102,11 @@
 
             <p>Por motivos de segurança, recomendamos que você altere sua senha após o primeiro acesso.</p>
 
-            <a href="{{ url('/login') }}" class="button">Acessar minha conta</a>
+            <a href="{{ $url }}" class="button">Acessar minha conta</a>
+            <p>Se você tiver alguma dúvida ou precisar de assistência, não hesite em entrar em contato conosco.</p>
+            <p>Agradecemos por escolher nossa plataforma!</p>
+            <p>Atenciosamente,</p>
+            <p>A equipe da nossa plataforma</p>
         </div>
 
         <div class="footer">

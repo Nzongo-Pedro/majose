@@ -14,15 +14,23 @@ class UserPasswordMail extends Mailable
     public $user;
     public $password;
 
-    public function __construct(User $user, $password)
+    public $url;
+
+    public function __construct($user, $password, $url)
     {
         $this->user = $user;
         $this->password = $password;
+        $this->url = $url;
     }
 
     public function build()
     {
-        return $this->subject('Sua conta foi criada')
-            ->view('emails.userPassword'); // A view para o e-mail
+        return $this->view('emails.userPassword')
+            ->with([
+                'user' => $this->user,
+                'password' => $this->password,
+                'url' => $this->url,
+            ]);
     }
+
 }

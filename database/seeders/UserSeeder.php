@@ -24,6 +24,9 @@ class UserSeeder extends Seeder
         ]);
 
         // Enviar o e-mail com a senha gerada
-        Mail::to($user->email)->send(new UserPasswordMail($user, $randomPassword));
+        $url = app()->environment('local') ? env('APP_URL_LOCAL') : env('APP_URL_PRODUCTION');
+        Mail::to($user->email)->send(new UserPasswordMail($user, $randomPassword, $url));
+
+
     }
 }
