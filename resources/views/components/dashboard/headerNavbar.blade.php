@@ -394,10 +394,10 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="header-user wg-user">
                             <span class="image">
-                                <img src="images/avatar/user-1.png" alt="">
+                                <img src="{{asset('dashboard/images/avatar/user-1.png')}}" alt="{{Auth::user()->name}}">
                             </span>
                             <span class="flex flex-column">
-                                <span class="body-title mb-2">Kristin Watson</span>
+                                <span class="body-title mb-2">{{Auth::user()->name}}</span>
                                 <span class="text-tiny">Admin</span>
                             </span>
                         </span>
@@ -445,12 +445,16 @@
                             </a>
                         </li>
                         <li>
-                            <a href="login.html" class="user-item">
-                                <div class="icon">
-                                    <i class="icon-log-out"></i>
-                                </div>
-                                <div class="body-title-2">Log out</div>
-                            </a>
+                            <form action="{{route('logout')}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn bt user-item">
+                                    <div class="icon">
+                                        <i class="icon-log-out"></i>
+                                    </div>
+                                    <div class="body-title-2">Sair</div>
+                                </button>
+
+                            </form>
                         </li>
                     </ul>
                 </div>

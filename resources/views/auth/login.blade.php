@@ -22,8 +22,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/bootstrap-select.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/style.css')}}">
 
-
-
     <!-- Font -->
     <link rel="stylesheet" href="{{asset('dashboard/font/fonts.css')}}">
 
@@ -34,6 +32,7 @@
     <link rel="shortcut icon" href="{{asset('dashboard/images/favicon.png')}}">
     <link rel="apple-touch-icon-precomposed" href="{{asset('dashboard/images/favicon.png')}}">
 
+    <link rel="stylesheet" href="{{asset('plugins/sweetalert2/sweetalert2.all.min.js')}}">
 </head>
 
 <body class="body">
@@ -49,18 +48,19 @@
                     </a>
                     <div class="login-box">
                         <div>
-                            <h3>Login to account</h3>
+                            <h3>Entre na sua Conta</h3>
                             <div class="body-text">Enter your email & password to login</div>
                         </div>
-                        <form class="form-login flex flex-column gap24" action="{{route('login')}}" method="POST">
+                        <form class="form-login flex flex-column gap24" action="{{route('login')}}" method="POST"
+                            id="postAction">
                             @csrf
                             <fieldset class="email">
-                                <div class="body-title mb-10">Email address <span class="tf-color-1">*</span></div>
+                                <div class="body-title mb-10">E-mail <span class="tf-color-1">*</span></div>
                                 <input class="flex-grow" type="email" placeholder="Enter your email address"
                                     name="email" tabindex="0" value="" aria-required="true" required="">
                             </fieldset>
                             <fieldset class="password">
-                                <div class="body-title mb-10">Password <span class="tf-color-1">*</span></div>
+                                <div class="body-title mb-10">Palavra-passe <span class="tf-color-1">*</span></div>
                                 <input class="password-input" type="password" placeholder="Enter your password"
                                     name="password" tabindex="0" value="" aria-required="true" required="">
                                 <span class="show-pass">
@@ -71,13 +71,13 @@
                             <div class="flex justify-between items-center">
                                 <div class="flex gap10">
                                     <input class="" type="checkbox" id="signed">
-                                    <label class="body-text" for="signed">Keep me signed in</label>
+                                    <label class="body-text" for="signed"> Mantenha-me conectado</label>
                                 </div>
-                                <a href="#" class="body-text tf-color">Forgot password?</a>
+                                <a href="#" class="body-text tf-color">Esqueci a senha</a>
                             </div>
-                            <button type="submit" class="btn tf-button w-full">Login</button>
+                            <button type="submit" class="btn tf-button w-full">Entrar</button>
                         </form>
-                        <div>
+                        {{-- <div>
                             <div class="text-tiny mb-16 text-center">Or continue with social account</div>
                             <div class="flex gap16 mobile-wrap">
                                 <a href="index.html" class="tf-button style-2 w-full">
@@ -131,14 +131,14 @@
                                     <span class="tf-color-3">Sign in with Facebook</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="body-text text-center">
-                            You don't have an account yet?
-                            <a href="sign-up.html" class="body-text tf-color">Register Now</a>
+                            Ainda não tem uma conta?
+                            <a href="sign-up.html" class="body-text tf-color">Crie agora</a>
                         </div>
                     </div>
                 </div>
-                <div class="text-tiny">Copyright © 2024 Remos, All rights reserved.</div>
+                <div class="text-tiny">Copyright © {{date('Y')}} {{env('APP_NAME')}}, Todos os direito reservados.</div>
             </div>
         </div>
         <!-- /#page -->
@@ -150,6 +150,9 @@
     <script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('dashboard/js/bootstrap-select.min.js')}}"></script>
     <script src="{{asset('dashboard/js/main.js')}}"></script>
+
+    <script src="{{asset('plugins/sweetalert2/sweetalert2.all.min.js')}}"></script>
+    <script src="{{asset('js/functions.js')}}"></script>
 
 </body>
 

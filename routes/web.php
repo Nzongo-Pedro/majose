@@ -18,7 +18,7 @@ use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/', function () {
     return view('home');
-})->middleware('auth');
+})->middleware('auth')->name('home');
 
 
 Route::prefix('store/products')

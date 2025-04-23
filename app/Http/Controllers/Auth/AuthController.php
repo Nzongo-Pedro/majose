@@ -22,10 +22,19 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            // return redirect()->intended('/');
+
+            return response()->json([
+                'code' => 200,
+                'message' => 'OKAY',
+                'redirect' => route('home')
+            ], 200);
         }
 
-        return back()->with('error', 'Credenciais inválidas');
+        return response()->json([
+            'code' => 404,
+            'message' => 'Credencias Inválidos'
+        ], 404);
     }
 
     public function logout(Request $request)
