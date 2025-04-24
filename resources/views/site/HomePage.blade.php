@@ -65,7 +65,7 @@
                 @foreach ($produtos as $produto)
                     <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                         <div class="product__item sale">
-                            <div class="product__item__pic set-bg" @if ($produto['photo']['file_name'])
+                            <div class="product__item__pic set-bg" @if ($produto['photo'])
                                 data-setbg="{{asset('storage/uploads/products/' . $produto['photo']['file_name'])}}">
                             @else
                                 data-setbg="{{asset('storage/uploads/products/')}}">
