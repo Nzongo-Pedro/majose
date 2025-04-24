@@ -36,6 +36,7 @@ Route::prefix('store/products')
     });
 
 
+Route::get('/', [HomePageController::class, 'index']);
 Route::get('/pagina-principal', [HomePageController::class, 'index'])->name('site.index');
 
 
