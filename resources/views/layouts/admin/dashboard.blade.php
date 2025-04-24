@@ -22,8 +22,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/bootstrap-select.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/style.css')}}">
 
-
-
     <!-- Font -->
     <link rel="stylesheet" href="{{asset('dashboard/font/fonts.css')}}">
 
