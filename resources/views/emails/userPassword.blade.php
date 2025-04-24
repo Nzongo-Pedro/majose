@@ -26,7 +26,7 @@
 
         .header {
             text-align: center;
-            color: #4CAF50;
+            color: #e23594;
         }
 
         .header h1 {
@@ -35,7 +35,7 @@
 
         .content {
             font-size: 16px;
-            color: #333333;
+            color: #f5f1f1;
             line-height: 1.6;
         }
 
@@ -60,7 +60,7 @@
         }
 
         .footer a {
-            color: #4CAF50;
+            color: #af4c7d;
             text-decoration: none;
         }
 
@@ -70,7 +70,7 @@
 
         .button {
             display: inline-block;
-            background-color: #4CAF50;
+            background-color: #e23594;
             color: white !important;
             padding: 12px 20px;
             font-size: 16px;
@@ -80,7 +80,7 @@
         }
 
         .button:hover {
-            background-color: #45a049;
+            background-color: #e23594;
         }
     </style>
 </head>
@@ -102,7 +102,7 @@
 
             <p>Por motivos de segurança, recomendamos que você altere sua senha após o primeiro acesso.</p>
 
-            <a href="{{ $url }}" class="button">Acessar minha conta</a>
+            <a href="{{ $url . '/dashboard' }}" class="button">Acessar minha conta</a>
             <p>Se você tiver alguma dúvida ou precisar de assistência, não hesite em entrar em contato conosco.</p>
             <p>Agradecemos por escolher nossa plataforma!</p>
             <p>Atenciosamente,</p>
