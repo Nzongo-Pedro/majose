@@ -16,12 +16,23 @@ class UserSeeder extends Seeder
         // Gerar uma senha aleatória
         $randomPassword = Str::random(10); // Senha aleatória com 10 caracteres
 
+        $users = [
+            /*  [
+                 'name' => 'Nzongo Pedro',
+                 'email' => 'nzongopedro3@gmail.com',
+                 'password' => Hash::make($randomPassword), // Criptografar a senha
+             ], */
+            [
+                'name' => 'Raimundo Nicolau',
+                'email' => 'nicolaujorge795@gmail.com',
+                'password' => Hash::make($randomPassword), // Criptografar a senha
+            ],
+        ];
+
         // Criar o usuário
-        $user = User::create([
-            'name' => 'Nzongo Pedro',
-            'email' => 'nzongopedro3@gmail.com',
-            'password' => Hash::make($randomPassword), // Criptografar a senha
-        ]);
+        foreach ($users as $userData) {
+            $user = User::create($userData);
+        }
 
         // Enviar o e-mail com a senha gerada
         $url = env('APP_URL');
