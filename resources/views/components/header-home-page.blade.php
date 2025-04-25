@@ -25,9 +25,7 @@
 
     </div>
     <div id="mobile-menu-wrap"></div>
-    <div class="offcanvas__text">
-        <p>Sua Loja de roupa online aberto 24H por dia.</p>
-    </div>
+   
 </div>
 <!-- Offcanvas Menu End -->
 <!-- Header Section Begin -->
