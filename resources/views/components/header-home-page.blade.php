@@ -2,7 +2,34 @@
 <div id="preloder">
     <div class="loader"></div>
 </div>
+<!-- Offcanvas Menu Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-wrapper">
+    <div class="offcanvas__option">
+        <div class="offcanvas__links">
 
+            <a href="#">FAQs</a>
+        </div>
+
+    </div>
+    <div class="offcanvas__nav__option">
+        <a href="#" class="search-switch">
+            <img src="{{asset('site/img/icon/search.png')}}" alt="">
+        </a>
+        <a href="#">
+            <img src="{{asset('site/img/icon/heart.png')}}" alt="">
+        </a>
+        <a href="#">
+            <img src="{{asset('site/img/icon/cart.png')}}" alt="">
+        </a>
+
+    </div>
+    <div id="mobile-menu-wrap"></div>
+    <div class="offcanvas__text">
+        <p>Sua Loja de roupa online aberto 24H por dia.</p>
+    </div>
+</div>
+<!-- Offcanvas Menu End -->
 <!-- Header Section Begin -->
 <header class="header">
     <div class="header__top">
@@ -46,7 +73,7 @@
                     <a href="#" class="search-switch"><img src="{{asset('site/img/icon/search.png')}}" alt=""></a>
                     <a href="#"><img src="{{asset('site/img/icon/heart.png')}}" alt=""></a>
                     <a href="#"><img src="{{asset('site/img/icon/cart.png')}}" alt=""> <span>0</span></a>
-            
+
                 </div>
             </div>
         </div>
