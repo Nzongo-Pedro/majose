@@ -17,7 +17,7 @@ use App\Http\Controllers\HomePageController;
 |
 */
 
-Route::get('/dashboard', function () {
+Route::get('/admin', function () {
     return view('home');
 })->middleware('auth')->name('home');
 
