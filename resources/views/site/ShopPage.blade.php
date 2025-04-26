@@ -184,9 +184,10 @@
                         @forelse ($produtos as $produto)
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" @if ($produto['photo']['file_name'] == null)
+                                    <div class="product__item__pic set-bg" @if (!$produto['photo'])
                                     data-setbg="{{ asset('site/img/product/product-1.jpg') }}" @else
-                                    data-setbg="{{ asset('storage/uploads/products/' . $produto['photo']) }}" @endif>
+                                        data-setbg="{{ asset('storage/uploads/products/' . $produto['photo']['file_name']) }}"
+                                    @endif>
                                         <ul class="product__hover">
                                             <li>
                                                 <a href="#">
