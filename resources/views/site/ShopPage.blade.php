@@ -211,12 +211,9 @@
                                     </div>
                                     <div class="product__item__text">
                                         <h6>{{ $produto->name }}</h6>
-                                        <a href="#" class="add-cart">+ Add To Cart</a>
-                                        <div class="rating">
-                                            @for ($i = 0; $i < 5; $i++)
-                                                <i class="fa fa-star{{ $i < $produto->rating ? '' : '-o' }}"></i>
-                                            @endfor
-                                        </div>
+                                        <a href="#" class="add-cart">Ver detalhes</a>
+
+
                                         <h5>AO {{ number_format($produto->price, 2, ',', '.') }}</h5>
                                     </div>
                                 </div>

@@ -11,7 +11,7 @@ class HomePageController extends Controller
     {
         $produtos = $products
             ->with(['brand', 'category', 'subcategory', 'gender', 'old', 'size', 'photo'])
-            ->get();
+            ->paginate(8);
 
         return view('site.HomePage', compact('produtos'));
         //return response()->json($produtos, $status = 200);
