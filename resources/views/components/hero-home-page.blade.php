@@ -101,7 +101,45 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-
+<section class="banner spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-4">
+                <div class="banner__item">
+                    <div class="banner__item__pic">
+                        <img src="{{asset('site/img/banner/banner-4.jpg')}}" alt="">
+                    </div>
+                    <div class="banner__item__text">
+                        <h2>Langerie Preto</h2>
+                        <a href="#">Compre agore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="banner__item banner__item--middle">
+                    <div class="banner__item__pic">
+                        <img src="{{asset('site/img/banner/banner-2.jpg')}}" alt="">
+                    </div>
+                    <div class="banner__item__text">
+                        <h2>Blusa Rosa</h2>
+                        <a href="#">Compre agora</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="banner__item banner__item--last">
+                    <div class="banner__item__pic">
+                        <img src="{{asset('site/img/banner/banner-3.jpg')}}" alt="">
+                    </div>
+                    <div class="banner__item__text">
+                        <h2>Vestido Preto</h2>
+                        <a href="#">Compre agora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
