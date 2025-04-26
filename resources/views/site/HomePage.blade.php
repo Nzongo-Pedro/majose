@@ -6,8 +6,6 @@
     <x-hero-home-page />
     <!-- Hero Section End -->
 
-
-
     <!-- Product Section Begin -->
     <section class="product spad">
         <div class="container">
@@ -20,7 +18,7 @@
                             <div class="product__item__pic set-bg" @if ($produto['photo'])
                                 data-setbg="{{asset('storage/uploads/products/' . $produto['photo']['file_name'])}}">
                             @else
-                                data-setbg="{{asset('storage/uploads/products/')}}">
+                                data-setbg="{{asset('site/img/product/product-1.jpg')}}">
                             @endif
 
                                 <span class="label">Venda</span>
