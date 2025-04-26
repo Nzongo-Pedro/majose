@@ -18,7 +18,8 @@
                             <div class="product__item__pic set-bg" @if ($produto['photo'])
                                 data-setbg="{{asset('storage/uploads/products/' . $produto['photo']['file_name'])}}">
                             @else
-                                data-setbg="{{asset('site/img/product/product-1.jpg')}}">
+                                data-setbg="{{asset('site/img/product-sale.png')}}">
+
                             @endif
 
                                 <span class="label">Venda</span>
