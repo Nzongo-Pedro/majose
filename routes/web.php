@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\HomePageController;
 
 
 /*  
@@ -38,8 +39,7 @@ Route::prefix('store/products')
 
 Route::get('/', [HomePageController::class, 'index']);
 Route::get('/pagina-principal', [HomePageController::class, 'index'])->name('site.index');
-
-
+Route::get('/produtos-da-loja', [ShopController::class, 'index'])->name('site.shop');
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');

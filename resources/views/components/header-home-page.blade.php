@@ -25,7 +25,7 @@
 
     </div>
     <div id="mobile-menu-wrap"></div>
-   
+
 </div>
 <!-- Offcanvas Menu End -->
 <!-- Header Section Begin -->
@@ -59,10 +59,18 @@
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./shop.html">Loja</a></li>
-                        <li><a href="./blog-details.html">Sobre Nós</a></li>
-                        <li><a href="#">Contactos</a></li>
+                        <li class="{{ Route::currentRouteName() == 'site.index' ? 'active' : '' }}">
+                            <a href="{{ route('site.index') }}">Home</a>
+                        </li>
+                        <li class="{{ Route::currentRouteName() == 'site.shop' ? 'active' : '' }}">
+                            <a href="{{ route('site.shop') }}">Loja</a>
+                        </li>
+                        <li>
+                            <a href="./blog-details.html">Sobre Nós</a>
+                        </li>
+                        <li>
+                            <a href="#">Contactos</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
