@@ -9,10 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') {{env('APP_NAME')}}</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
-
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{asset('site/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('site/css/font-awesome.min.css')}}">
