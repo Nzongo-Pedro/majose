@@ -115,6 +115,46 @@
     <script src="{{asset('site/js/mixitup.min.js')}}"></script>
     <script src="{{asset('site/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('site/js/main.js')}}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const placeholder = '/site/img/placeholder.jpg';
+
+            document.querySelectorAll('img').forEach(img => {
+                if (!img.dataset.src) {
+                    img.dataset.src = img.src;
+                    img.src = placeholder;
+                    img.setAttribute('loading', 'lazy');
+                }
+            });
+
+            if ('IntersectionObserver' in window) {
+                const obs = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            observer.unobserve(img);
+                        }
+                    });
+                }, {
+                    rootMargin: '0px 0px 50px',
+                    threshold: 0.01
+                });
+
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    obs.observe(img);
+                });
+            } else {
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                });
+            }
+        });
+    </script>
+
 </body>
 
 </html>
