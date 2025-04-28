@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                {{$product}}
+
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <ul class="nav nav-tabs" role="tablist">
@@ -61,6 +61,15 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__pic__item">
+                                    {{-- verifica se a foto existe --}}
+                                    @if ($product['photo'])
+                                        <img src="{{asset('storage/uploads/products/' . $product['photo']['file_name'])}}"
+                                            alt="{{ $product->name }}"
+                                            style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                                    @else
+                                        <img src="{{asset('site/img/shop-details/product-big.png')}}" alt="">
+                                    @endif
+
                                     <img src="{{asset('storage/uploads/products/' . $product['photo']['file_name'])}}"
                                         alt="{{ $product->name }}"
                                         style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
