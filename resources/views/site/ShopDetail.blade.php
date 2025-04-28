@@ -70,9 +70,6 @@
                                         <img src="{{asset('site/img/shop-details/product-big.png')}}" alt="">
                                     @endif
 
-                                    <img src="{{asset('storage/uploads/products/' . $product['photo']['file_name'])}}"
-                                        alt="{{ $product->name }}"
-                                        style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
