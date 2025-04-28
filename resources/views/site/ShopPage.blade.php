@@ -3,14 +3,17 @@
 @section('title', 'Loja - ' . env('APP_NAME'))
 
 @section('content')
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Loja</h4>
                         <div class="breadcrumb__links">
                             <a href="{{route('home')}}">Home</a>
                             <span>Shop</span>
@@ -202,7 +205,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('site.show', ['id' => $produto->id]) }}">
                                                     <img src="{{ asset('site/img/icon/search.png') }}"
                                                         alt="{{ $produto->name }}">
                                                 </a>
@@ -211,7 +214,8 @@
                                     </div>
                                     <div class="product__item__text">
                                         <h6>{{ $produto->name }}</h6>
-                                        <a href="#" class="add-cart">Ver detalhes</a>
+                                        <a href="{{route('site.show', ['id' => $produto->id])}}" class="add-cart">Ver
+                                            detalhes</a>
 
 
                                         <h5>AO {{ number_format($produto->price, 2, ',', '.') }}</h5>

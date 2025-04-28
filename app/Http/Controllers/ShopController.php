@@ -36,8 +36,11 @@ class ShopController extends Controller
     }
 
 
-    public function show($id)
+    public function show(Products $products, $id)
     {
-        return view('shop.show', compact('id'));
+        $product = new ProductsController();
+        $product = $product->show($products, $id);
+        return view('site.ShopDetail', compact('product'));
+        //return response()->json($product, $status = 200);
     }
 }

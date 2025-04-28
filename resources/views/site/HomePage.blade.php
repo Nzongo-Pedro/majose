@@ -43,8 +43,7 @@
                             </div>
                             <div class="product__item__text">
                                 <h6>{{ $produto->name }}</h6>
-                                <a href="{{route('product.show', ['id' => $produto->id, 'model' => $produto->name])}}"
-                                    class="add-cart">Ver
+                                <a href="{{route('site.show', ['id' => $produto->id])}}" class="add-cart">Ver
                                     detalhes</a>
 
                                 <h5>AO {{ number_format($produto->price, 2, ',', '.') }}</h5>

@@ -30,9 +30,9 @@ class ProductsController extends Controller
 
     public function show(Products $products, $id = null)
     {
-        $produtos = $products->with(['brand', 'category', 'subcategory', 'gender', 'old', 'size'])->find($id);
+        return $products->with(['brand', 'category', 'subcategory', 'gender', 'old', 'size', 'photo'])->find($id);
 
-        return $produtos ? response()->json($produtos) : response()->json(['message' => 'produto não encontrado']);
+        // return $produtos ? response()->json($produtos) : response()->json(['message' => 'produto não encontrado']);
     }
 
     public function showByCategory(Products $products, $id = null, $category = null)
