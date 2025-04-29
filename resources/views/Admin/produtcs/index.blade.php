@@ -107,9 +107,10 @@
                                     <div class="image no-bg">
                                         @if ($produto['photo'])
                                             <img src="{{asset('storage/uploads/products/' . $produto['photo']['file_name'])}}"
-                                                alt="{{$produto->name}}">
+                                                alt="{{$produto->name}}" loading="lazy">
                                         @else
-                                            <img src="{{asset('site/img/product-sale.png')}}" alt="{{$produto->name}}">
+                                            <img src="{{asset('site/img/product-sale.png')}}" alt="{{$produto->name}}"
+                                                loading="lazy">
                                         @endif
                                     </div>
                                     <div class="flex items-center justify-between gap20 flex-grow">

@@ -18,7 +18,7 @@ class UploadImageHelper
         }
 
         $extension = strtolower($file->getClientOriginalExtension());
-        $allowedExtensions = ['jpeg', 'jpg', 'png', 'webpp'];
+        $allowedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'gif'];
 
         if (!in_array($extension, $allowedExtensions)) {
             return response()->json([
