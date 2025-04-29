@@ -42,6 +42,6 @@ Route::get('/pagina-principal', [HomePageController::class, 'index'])->name('sit
 Route::get('/produtos-da-loja', [ShopController::class, 'index'])->name('site.shop');
 Route::get('/prutudo/{id}/detalhes', [ShopController::class, 'show'])->name('site.show');
 
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::get('/login', [AuthController::class, 'showLogin'])->middleware('guest')->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

@@ -49,7 +49,7 @@
                     <div class="login-box">
                         <div>
                             <h3>Entre na sua Conta</h3>
-                            <div class="body-text">Enter your email & password to login</div>
+                            <div class="body-text">Informes seus dados de acesso</div>
                         </div>
                         <form class="form-login flex flex-column gap24" action="{{route('login')}}" method="POST"
                             id="postAction">

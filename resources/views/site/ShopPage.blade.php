@@ -192,7 +192,7 @@
                                     @else
                                         data-setbg="{{asset('site/img/product-sale.png')}}">
 
-                                    @endif>
+                                    @endif
                                         <ul class="product__hover">
                                             <li>
                                                 <a href="#">

@@ -73,7 +73,7 @@ class ProductsController extends Controller
 
             $file_name = UploadImageHelper::validateAndUploadImage($datas['file_name']);
 
-            $save_photo = ProductsPhoto::create([
+            ProductsPhoto::create([
                 'id_product' => $id_product,
                 'file_name' => $file_name
             ]);

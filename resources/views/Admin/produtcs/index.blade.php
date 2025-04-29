@@ -109,7 +109,7 @@
                                             <img src="{{asset('storage/uploads/products/' . $produto['photo']['file_name'])}}"
                                                 alt="{{$produto->name}}">
                                         @else
-                                            <img src="{{asset('storage/uploads/products/')}}" alt="{{$produto->name}}">
+                                            <img src="{{asset('site/img/product-sale.png')}}" alt="{{$produto->name}}">
                                         @endif
                                     </div>
                                     <div class="flex items-center justify-between gap20 flex-grow">
