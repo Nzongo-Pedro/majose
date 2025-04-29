@@ -1,6 +1,7 @@
 <?php
 namespace App\Helpers;
 
+use App\Models\ProductsPhoto;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -59,7 +60,17 @@ class CrudAjaxHelper
     public static function delete($record)
     {
         try {
+
+            $image = ProductsPhoto::where('id_product', $record->id)->first();
+
+            if ($image && $image->file_name && Storage::disk('public')->exists($image->file_name)) {
+                Storage::disk('public')->delete('uploads/products/' . $image->file_name); // Remova 'storage/' daqui
+
+                $image->delete();
+            }
+
             $record->delete();
+
             return response()->json([
                 'message' => 'Registro excluído com sucesso',
                 'code' => 200,
